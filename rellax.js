@@ -79,8 +79,9 @@
     // Default Settings
     self.options = {
       speed: -2,
-	  verticalSpeed: null,
-	  horizontalSpeed: null,
+      attributeName: 'rellax',
+      verticalSpeed: null,
+      horizontalSpeed: null,
       center: false,
       wrapper: null,
       relativeToWrapper: false,
@@ -171,20 +172,20 @@
     // We want to cache the parallax blocks'
     // values: base, top, height, speed
     // el: is dom object, return: el cache values
-    var createBlock = function(el) {
-      var dataPercentage = el.getAttribute( 'data-rellax-percentage' );
-      var dataSpeed = el.getAttribute( 'data-rellax-speed' );
-      var dataVerticalSpeed = el.getAttribute('data-rellax-vertical-speed');
-      var dataHorizontalSpeed = el.getAttribute('data-rellax-horizontal-speed');
-      var dataVericalScrollAxis = el.getAttribute('data-rellax-vertical-scroll-axis');
-      var dataHorizontalScrollAxis = el.getAttribute('data-rellax-horizontal-scroll-axis');
-      var dataZindex = el.getAttribute( 'data-rellax-zindex' ) || 0;
-      var dataMin = el.getAttribute( 'data-rellax-min' );
-      var dataMax = el.getAttribute( 'data-rellax-max' );
-      var dataMinX = el.getAttribute('data-rellax-min-x');
-      var dataMaxX = el.getAttribute('data-rellax-max-x');
-      var dataMinY = el.getAttribute('data-rellax-min-y');
-      var dataMaxY = el.getAttribute('data-rellax-max-y');
+    var createBlock = function (el) {
+      var dataPercentage = el.getAttribute( 'data-' + self.options.attributeName + '-percentage' );
+      var dataSpeed = el.getAttribute( 'data-' + self.options.attributeName + '-speed' );
+      var dataVerticalSpeed = el.getAttribute('data-' + self.options.attributeName + '-vertical-speed');
+      var dataHorizontalSpeed = el.getAttribute('data-' + self.options.attributeName + '-horizontal-speed');
+      var dataVericalScrollAxis = el.getAttribute('data-' + self.options.attributeName + '-vertical-scroll-axis');
+      var dataHorizontalScrollAxis = el.getAttribute('data-' + self.options.attributeName + '-horizontal-scroll-axis');
+      var dataZindex = el.getAttribute( 'data-' + self.options.attributeName + '-zindex' ) || 0;
+      var dataMin = el.getAttribute( 'data-' + self.options.attributeName + '-min' );
+      var dataMax = el.getAttribute( 'data-' + self.options.attributeName + '-max' );
+      var dataMinX = el.getAttribute('data-' + self.options.attributeName + '-min-x');
+      var dataMaxX = el.getAttribute('data-' + self.options.attributeName + '-max-x');
+      var dataMinY = el.getAttribute('data-' + self.options.attributeName + '-min-y');
+      var dataMaxY = el.getAttribute('data-' + self.options.attributeName + '-max-y');
 
       // initializing at scrollY = 0 (top of browser), scrollX = 0 (left of browser)
       // ensures elements are positioned based on HTML layout.
